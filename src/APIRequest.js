@@ -1,0 +1,15 @@
+
+const APIRequest = async(url='',optionsObj=null,errMsg=null) => {
+  try{
+    const response=await fetch(url,optionsObj)
+    if(!response.ok) throw Error("Error. Try again")
+  }
+  catch(err){
+    errMsg=err.message
+  }
+  finally{
+    return errMsg
+  }
+}
+
+export default APIRequest
